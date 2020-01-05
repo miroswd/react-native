@@ -28,3 +28,26 @@ stop debug => desliga
 Mas utilizaremos o Reactotron, para debug do react-native
 
 >>> yarn add reactotron-react-native
+
+//React Navigate
+rnfc nos arquivos index
+
+>>> yarn add react-navigation # Essa biblioteca sempre é atualizada, sempre olhar a documentação
+Se atentar se ta instalando as dependências utilizando expo
+https://reactnavigation.org/docs/en/getting-started.html
+Seguir as instruções da documentação
+
+abrir o arquivo: android/app/build.gradle
+ctrl + p e cola o arquivo
+Colar dentro de dependências
+implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
+implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02'
+
+para finalizar
+ctrl+ p = MainActivity.java
+
+***Quando instalar uma biblioteca que fará modificações nativas, devemos rodar >>> react-native run-android
+
+>>> yarn add react-navigation-stack @react-native-community/masked-view
+
+>>> adb shell input text "RR" # Reload no dispositivo sem ter que chacoalhar
