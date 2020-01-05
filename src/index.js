@@ -1,5 +1,5 @@
 import React from 'react';
-// import { View, Text } from 'react-native';
+import { StatusBar } from 'react-native';
 // ReactoTron
 import './config/ReactoTronConfig';
 
@@ -7,6 +7,10 @@ import './config/ReactoTronConfig';
 import Routes from './routes';
 
 export default function App() {
-  console.tron.log('Testae');
-  return <Routes />;
+  return (
+    <>
+      <StatusBar barStyle="light-content" backgroundColor="#267d8d" />
+      <Routes />
+    </>
+  );
 }
