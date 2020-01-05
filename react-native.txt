@@ -54,3 +54,11 @@ ctrl+ p = MainActivity.java
 
 /// Status Bar
 importar do próprio react-native
+
+
+/// Styled Components
+>>> yarn add styled-components
+Semelhante ao do react, porém deve ser importado do native
+As tags devem ser do react native, styled.View, Text, etc.
+Não é possível fazer encadeamento, é necessário importar o elemento
+Não tem estilo Global, a solução é criar um estilo compartilhado
