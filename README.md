@@ -24,6 +24,8 @@ react-native start --reset-cache # Limpa o cache e inicia
 <ul>
   <li>React Navigation</li>
   <li>ReactoTron - Debug</li>
+  <li>Status Bar</li>
+  <li>Styled Components</li>
 </ul>
 
 <h3>Padronização:</h3>
