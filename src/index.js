@@ -1,14 +1,12 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-
+// import { View, Text } from 'react-native';
 // ReactoTron
-import './config/ReactTronConfig';
+import './config/ReactoTronConfig';
+
+// Importação de arquivos depois do reactotron
+import Routes from './routes';
 
 export default function App() {
-  console.tron.log('Agora foi!');
-  return (
-    <View>
-      <Text>Hello Muchacho</Text>
-    </View>
-  );
+  console.tron.log('Testae');
+  return <Routes />;
 }
