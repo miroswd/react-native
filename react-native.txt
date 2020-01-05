@@ -1,0 +1,30 @@
+Após criar o diretório do projeto
+Acessando ele, com o celular conectado
+>>> npx react-native init projeto
+>>> cd projeto
+>>> react-native run-android
+
+/// Inicialização
+>>> react-native start
+Ou
+>>> react-native start --reset-cache # Para atualizar as dependências
+
+Caso não conecte:
+>>> adb reverse tcp:8081 tcp:8081
+
+Chacoalhar o celular para ter as opções
+
+/// Padronização
+Semelhante ao do ReactJS
+Na seleção de browser ou node, nenhuma opção é selecionada
+
+
+/// Debug
+Posso usar o console.log()
+Usar a opção de debug do emulador, porém será aberta uma nova aba no navegador
+debug => liga
+stop debug => desliga
+
+Mas utilizaremos o Reactotron, para debug do react-native
+
+>>> yarn add reactotron-react-native
