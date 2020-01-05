@@ -51,3 +51,6 @@ ctrl+ p = MainActivity.java
 >>> yarn add react-navigation-stack @react-native-community/masked-view
 
 >>> adb shell input text "RR" # Reload no dispositivo sem ter que chacoalhar
+
+/// Status Bar
+importar do próprio react-native
