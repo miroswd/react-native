@@ -7,7 +7,7 @@ yarn # Instala todas as dependências
 ```
 ```
 ##### Iniciando a SDK do android #####
-adb device # Verifica os dispositivos android conectado
+adb devices # Verifica os dispositivos android conectado
 adb reverse tcp:8081 tcp:8081 # Conecta o computador ao dispositivo físico
 adb shell input text 82 # Abre o menu do desenvolvedor no dispositivo
 adb shell input text rr # Reload no dispositivo
