@@ -62,3 +62,10 @@ Semelhante ao do react, porém deve ser importado do native
 As tags devem ser do react native, styled.View, Text, etc.
 Não é possível fazer encadeamento, é necessário importar o elemento
 Não tem estilo Global, a solução é criar um estilo compartilhado
+
+
+/// Estilizando formulário
+>>> yarn add react-native-vector-icons # Ícones em formato de vetor
+https://github.com/oblador/react-native-vector-icons#option-with-gradle-recommended
+copiar o bloco do project.ext.native
+>>> react-native run-android
