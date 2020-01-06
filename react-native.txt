@@ -69,3 +69,6 @@ Não tem estilo Global, a solução é criar um estilo compartilhado
 https://github.com/oblador/react-native-vector-icons#option-with-gradle-recommended
 copiar o bloco do project.ext.native
 >>> react-native run-android
+
+/// Acessando API do Github
+>>> yarn add axios # Para lidar com chamadas API
