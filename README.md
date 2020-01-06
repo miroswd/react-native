@@ -22,6 +22,7 @@ react-native start --reset-cache # Limpa o cache e inicia
 
 <h3>Conceitos:</h3>
 <ul>
+  <li>Axios</li>
   <li>React Navigation</li>
   <li>ReactoTron - Debug</li>
   <li>Status Bar</li>
