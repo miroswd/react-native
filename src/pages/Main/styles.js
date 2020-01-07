@@ -37,3 +37,57 @@ export const SubmitButton = styled(RectButton)`
   margin-left: 10px;
   padding: 0 10px;
 `;
+
+// Listagem
+
+export const List = styled.FlatList.attrs({
+  showsVerticalScrollIndicator: false,
+})`
+  margin-top: 20px;
+`;
+
+export const User = styled.View`
+  align-items: center;
+  margin: 0 20px 30px;
+`;
+
+export const Avatar = styled.Image`
+  width: 64px;
+  height: 64px;
+  border-radius: 32px; /*Não consigo trabalhar com porcentagem, usar a metade do valor de altura e largura */
+  background-color: #bbb;
+`;
+
+export const Name = styled.Text`
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  margin-top: 4px;
+  text-align: center; /** Align-items alinha o component */
+`;
+
+export const Bio = styled.Text.attrs({
+  numberOfLines: 2,
+})`
+  font-size: 13px;
+  line-height: 18px;
+  color: #555;
+  margin-top: 5px;
+`;
+
+export const ProfileButton = styled(RectButton)`
+  margin-top: 10px;
+  align-self: stretch; /* Ocupa a largura total do component */
+  background: #267d8d;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+`;
+
+export const ProfileButtonText = styled.Text`
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase; /**Caixa alta */
+  color: #fff;
+`;
