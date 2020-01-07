@@ -75,3 +75,8 @@ copiar o bloco do project.ext.native
 
 // Estilizando a listagem
 ctrl+_shift+ (up/down) == seleciona outra linha
+
+/// Salvando no Storage
+Por padrão o react native não tem uma api como o local storage
+>>> yarn add @react-native-community/async-storage
+>>> yarn react-native run-android

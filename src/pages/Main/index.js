@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {Keyboard, ActivityIndicator} from 'react-native'
+
+import AsyncStorage from '@react-native-community/async-storage'
+
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../../services/api'
 import {
@@ -23,6 +26,28 @@ class Main extends Component {
     users:[],
     loading:false
   }
+
+async componentDidMount(){
+  // Busca os dados
+  const users = await AsyncStorage.getItem('users');
+
+  if(users) {
+    console.tron.log("Chegou até o didMount")
+    this.setState({users:JSON.parse(users)})
+    console.tron.log("Finalizou até o didMount")
+  }
+
+}
+
+componentDidUpdate(_,prevState ){
+  // Quando houver alterações na variável users
+  if (prevState.users !== this.state.users ) {
+    console.tron.log("Chegou até o didUpdate")
+     AsyncStorage.setItem('users', JSON.stringify(this.state.users))
+     console.tron.log("Finalizou o didUpdate")
+  }
+}
+
 
   handleAddUser = async () => {
     const {users,newUser} = this.state
