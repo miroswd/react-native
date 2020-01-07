@@ -36,6 +36,7 @@ export const SubmitButton = styled(RectButton)`
   border-radius: 4px;
   margin-left: 10px;
   padding: 0 10px;
+  opacity: ${props => (props.loading ? 0.7 : 1)};
 `;
 
 // Listagem

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Keyboard} from 'react-native'
+import {Keyboard, ActivityIndicator} from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../../services/api'
 import {
@@ -21,10 +21,13 @@ class Main extends Component {
   state =  {
     newUser:'miroswd',
     users:[],
+    loading:false
   }
 
   handleAddUser = async () => {
     const {users,newUser} = this.state
+
+    this.setState({loading:true})
     const response = await api.get(`/users/${newUser}`)
 
     const data = {
@@ -37,6 +40,7 @@ class Main extends Component {
     this.setState({
       users:[...users,data],
       newUser:'',
+      loading:false
     })
 
     Keyboard.dismiss();
@@ -46,7 +50,7 @@ class Main extends Component {
   }
 
   render() {
-    const {users,newUser} = this.state
+    const {users,newUser, loading} = this.state
 
     return (
       <Container>
@@ -60,8 +64,11 @@ class Main extends Component {
             returnKeyType="send"
             onSubmitEditing={this.handleAddUser} // Método que será executado ao clicar no send
           />
-          <SubmitButton onPress={this.handleAddUser}>
-            <Icon name="add" size={20} color="#FFF" />
+          <SubmitButton loading={loading} onPress={this.handleAddUser}>
+            {loading ?
+              <ActivityIndicator color="#FFF" />
+            :
+            <Icon name="add" size={20} color="#FFF" /> }
           </SubmitButton>
         </Form>
 
