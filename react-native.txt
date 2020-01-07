@@ -72,3 +72,6 @@ copiar o bloco do project.ext.native
 
 /// Acessando API do Github
 >>> yarn add axios # Para lidar com chamadas API
+
+// Estilizando a listagem
+ctrl+_shift+ (up/down) == seleciona outra linha
