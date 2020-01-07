@@ -2,38 +2,38 @@ import React, { Component } from 'react';
 import {Keyboard} from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../../services/api'
-
 import { Container, Form, Input, SubmitButton } from './styles';
 
 export default class Main extends Component {
-  state = {
-    newUser: '', // Dado do input
-    users: [],
+  state =  {
+    newUser:'',
+    users:[],
   }
 
-   handleAddUser = async () => {
-    const {users, newUser} = this.state;
+  handleAddUser = async () => {
+    const {users,newUser} = this.state
     const response = await api.get(`/users/${newUser}`)
 
     const data = {
-      name: response.data.name,
-      login: response.data.login,
+      name:response.data.name,
+      login:response.data.login,
       bio:response.data.bio,
-      avatar:response.data.avatar_url,
-    }
-
-    console.tron.log(data)
+      avatar:response.data.avatar_url
+    };
 
     this.setState({
-      users: [...users, data],
+      users:[...users,data],
       newUser:'',
     })
 
-    Keyboard.dismiss()
+    Keyboard.dismiss();
+
+    console.tron.log(this.state.users)
+
   }
 
   render() {
-    const {users, newUser} = this.state
+    const {users,newUser} = this.state
 
     return (
       <Container>
@@ -42,8 +42,10 @@ export default class Main extends Component {
             autoCorrect={false}
             autoCapitalize="none"
             placeholder="Adicionar Usuário"
+            value={newUser}
             onChangeText={text => this.setState({newUser:text})}
-            returnKeyType="send" // Enter no teclado do dispositivo
+            returnKeyType="send"
+            onSubmitEditing={this.handleAddUser} // Método que será executado ao clicar no send
           />
           <SubmitButton onPress={this.handleAddUser}>
             <Icon name="add" size={20} color="#FFF" />
