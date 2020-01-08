@@ -80,3 +80,7 @@ ctrl+_shift+ (up/down) == seleciona outra linha
 Por padrão o react native não tem uma api como o local storage
 >>> yarn add @react-native-community/async-storage
 >>> yarn react-native run-android
+
+/// Navegação
+Toda a navegação precisa ser feita através de javascript
+Utilizando uma função que já vem por padrão em todas as páginas da aplicação
