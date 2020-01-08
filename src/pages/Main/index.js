@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 import {Keyboard, ActivityIndicator} from 'react-native'
 
 import AsyncStorage from '@react-native-community/async-storage'
@@ -21,6 +22,16 @@ import {
   } from './styles';
 
 class Main extends Component {
+  static navigationOptions = {
+    title: 'Usuários',
+  };
+
+  static propTypes = {
+    navigation: PropTypes.shape({
+        navigate: PropTypes.func,
+    }).isRequired
+  }
+
   state =  {
     newUser:'miroswd',
     users:[],
@@ -28,13 +39,14 @@ class Main extends Component {
   }
 
 async componentDidMount(){
+  // console.tron.log(this.props) // exibindo as propriedades desse componente
   // Busca os dados
   const users = await AsyncStorage.getItem('users');
 
   if(users) {
-    console.tron.log("Chegou até o didMount")
+    //console.tron.log("Chegou até o didMount")
     this.setState({users:JSON.parse(users)})
-    console.tron.log("Finalizou até o didMount")
+    //console.tron.log("Finalizou até o didMount")
   }
 
 }
@@ -42,9 +54,9 @@ async componentDidMount(){
 componentDidUpdate(_,prevState ){
   // Quando houver alterações na variável users
   if (prevState.users !== this.state.users ) {
-    console.tron.log("Chegou até o didUpdate")
+    // console.tron.log("Chegou até o didUpdate")
      AsyncStorage.setItem('users', JSON.stringify(this.state.users))
-     console.tron.log("Finalizou o didUpdate")
+    // console.tron.log("Finalizou o didUpdate")
   }
 }
 
@@ -72,6 +84,13 @@ componentDidUpdate(_,prevState ){
 
     // console.tron.log(this.state.users)
 
+  }
+
+  // Navegação
+
+  handleNavigate = (user) => {
+    const {navigation} = this.props
+    navigation.navigate('User', {user}) // Mandando pra rota User, com o parâmetro user
   }
 
   render() {
@@ -106,7 +125,11 @@ componentDidUpdate(_,prevState ){
               <Name>{item.name}</Name>
               <Bio>{item.bio}</Bio>
 
-              <ProfileButton onPress={() => {}}>
+              <ProfileButton onPress={() => this.handleNavigate(item)}>
+                {/*
+                  this.handleNavigate() -> estou chamando uma função
+                  () => this.handleNavigate()  -> passo uma função como referência
+                */}
                 <ProfileButtonText>Ver Perfil</ProfileButtonText>
               </ProfileButton>
             </User>
@@ -119,8 +142,5 @@ componentDidUpdate(_,prevState ){
   }
 }
 
-Main.navigationOptions = {
-  title: 'Usuários',
-};
 
 export default Main
