@@ -84,3 +84,4 @@ Por padrão o react native não tem uma api como o local storage
 /// Navegação
 Toda a navegação precisa ser feita através de javascript
 Utilizando uma função que já vem por padrão em todas as páginas da aplicação
+>>> yarn add prop-types
